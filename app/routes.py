@@ -41,12 +41,6 @@ def model():
 
         newrow = [datetime.now(), form.is_mozart.data, form.is_bach.data, form.is_schubert.data, form.is_liszt.data, form.is_linkinpark.data]
         append_list_as_row('app/requests/song_requests.csv', newrow)
-        file1 = open("inputs.txt", "a")
-        for k, v in selection.items():
-            if v == True:
-                file1.write(k + "\n")
-        file1.write("----------------\n")
-        file1.close()
 
         selected_artists = getKeysByValue(selection, True)
         if len(selected_artists) == 2:
