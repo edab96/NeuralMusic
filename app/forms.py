@@ -7,3 +7,12 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
+
+
+class TrainingSelection(FlaskForm):
+    is_mozart = BooleanField('Mozart')
+    is_bach = BooleanField('Bach')
+    is_liszt = BooleanField('Liszt')
+    is_schubert = BooleanField('Schubert')
+    is_linkinpark = BooleanField('Linkin Park')
+    submit = SubmitField('Generate Music')

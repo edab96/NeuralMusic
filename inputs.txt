@@ -1,2 +1,9 @@
 sadsaddasdadasdqeda/npotato/nptoato
 Daniel
+fasrer
+True
+False
+False
+True
+True
+False

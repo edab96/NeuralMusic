@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Model goes here</h1>
+<h1>NeuralAI</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>{{ form.is_mozart() }} {{ form.is_mozart.label }}</p>
+        <p>{{ form.is_bach() }} {{ form.is_bach.label }}</p>
+        <p>{{ form.is_liszt() }} {{ form.is_liszt.label }}</p>
+        <p>{{ form.is_schubert() }} {{ form.is_schubert.label }}</p>
+        <p>{{ form.is_linkinpark() }} {{ form.is_linkinpark.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
 {% endblock %}
