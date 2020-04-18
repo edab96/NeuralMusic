@@ -18,13 +18,9 @@ def index():
     ]
     return render_template('index.html', title = 'Test', user=user, posts = posts)
 
-@app.route('/potato')
-def potato():
-    return "potato"
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/model')
+def model():
+    return render_template('model.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
