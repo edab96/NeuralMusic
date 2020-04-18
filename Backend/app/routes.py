@@ -16,7 +16,7 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
-    return render_template('index.html', title = 'Test', user=user, posts = posts)
+    return render_template('index.html')
 
 @app.route('/model')
 def model():
@@ -28,5 +28,8 @@ def login():
     if form.validate_on_submit():
         flash('Login requested for user {}, remember_me={}'.format(
             form.username.data, form.remember_me.data))
+        file1 = open("inputs.txt", "a")
+        file1.write(form.username.data + "\n")
+        file1.close()
         return redirect('/index')
     return render_template('login.html', title='Sign In', form=form)

@@ -5,10 +5,10 @@
             <div class="row align-items-center">
 
                 <div class="col-lg-5">
-                    <p class="lead">Hello there {{ user.username }}</p>
+                    <p class="lead">Hello there!</p>
                     <!-- <hr class="my-4"> -->
                     <p id="lead-small">It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                    <a class="btn btn-primary btn-lg" href="/about" role="button">Learn more</a>
+                    <a class="btn btn-primary btn-lg" href="/model" role="button">Get started...</a>
                 </div>
                 <div class="col-lg-7">
                     <img class="img-fluid" src="{{ url_for('static', filename='assets/img/piano_4x.png') }}" alt="">
@@ -94,7 +94,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/Robert.png" alt="" />
+                            <img class="mx-auto rounded-circle" src="{{ url_for('static', filename='assets/img/team/Robert.png') }}" alt="" />
                             <h4>Robert Viotto</h4>
                             <p class="text-muted">Data Science</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -102,7 +102,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/Svitlana.png" alt="" />
+                            <img class="mx-auto rounded-circle" src="{{ url_for('static', filename='assets/img/team/Svitlana.png') }}" alt="" />
                             <h4>Svitlana Leus</h4>
                             <p class="text-muted">Web Developer (Front-End)</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -112,12 +112,13 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/Daniel.jpg" alt="" />
+                            <img class="mx-auto rounded-circle" src="{{ url_for('static', filename='assets/img/team/Daniel.jpg') }}" alt="" />
                             <h4>Daniel</h4>
                             <p class="text-muted">Web Developer (Back-End)</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
+                    <!--
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/team/Rokas.png" alt="" />
@@ -126,9 +127,10 @@
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
+                    -->
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/Madis.png" alt="" />
+                            <img class="mx-auto rounded-circle" src="{{ url_for('static', filename='assets/img/team/Madis.jpg') }}" alt="" />
                             <h4>Madis Trahov</h4>
                             <p class="text-muted">Data Science</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
