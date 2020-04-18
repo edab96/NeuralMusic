@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+     crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Oswald:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="#page-top">NeuralMusic</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+      <!-- Header -->
+      <header class="masthead">
+        <div class="container">
+          <div class="intro-text">
+            <!-- <div class="intro-lead-in">NeuralMusic</div> -->
+            <div class="intro-heading text-uppercase">Some text goes here</div>
+            <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
+            <div class="">
+                <img src="brain-header.jpg" alt="" class="float-right inner-img">
+            </div>
+          </div>
+        </div>
+      </header>
+    
+    <section class=""></div>
+        <!-- <div class="row align-items-center"> -->
+            <!-- </div> -->
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                    <canvas></canvas>
+                    <audio id="music" preload="true" src="https://s3.eu-west-2.amazonaws.com/nelsoncodepen/Audiobinger_-_The_Garden_State.mp3">
+                    </audio>
+                    <div id="audioplayer">
+                        <button id="pButton" class="play"></button>
+                        <div id="timeline">    
+                            <div id="playhead"></div>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    
+    <!-- <div class="call-to-action">Click to play!</div> -->
+
+      <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

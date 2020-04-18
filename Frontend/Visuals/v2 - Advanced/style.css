@@ -1,0 +1,155 @@
+html, body {
+    height: 100%;
+  }
+
+  body {
+    background: #eff7fa;
+    /* font-family: 'Comfortaa', cursive; */
+    font-family: 'Oswald', sans-serif;
+  }
+
+  header.masthead {
+    text-align: center;
+    color: black;
+    /* background-color: black; */
+    background-image: url("noise.jpg");
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: center;
+    /* background-size: cover; */
+  }
+
+  .text-uppercase {
+    background-color: black;
+    opacity: 0.5;
+    display: inline;
+  }
+
+  .inner-img {
+    max-width: 800px;
+  }
+
+  header.masthead .intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px;
+  }
+  
+  header.masthead .intro-text .intro-lead-in {
+    font-size: 22px;
+    background-color: black;
+    margin-left: 0;
+    margin-right: 0;
+    /* font-style: italic; */
+    line-height: 22px;
+    margin-bottom: 25px;
+    /* font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
+  }
+  
+  header.masthead .intro-text .intro-heading {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 25px;
+    /* font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
+  }
+  
+  @media (min-width: 768px) {
+    header.masthead .intro-text {
+      padding-top: 300px;
+      padding-bottom: 200px;
+    }
+    header.masthead .intro-text .intro-lead-in {
+      font-size: 40px;
+      font-style: italic;
+      line-height: 40px;
+      margin-bottom: 25px;
+      /* font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
+    }
+    header.masthead .intro-text .intro-heading {
+      font-size: 75px;
+      font-weight: 700;
+      line-height: 75px;
+      margin-bottom: 30px;
+      margin-top: 100px;
+      position: absolute;
+      /* font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
+    }
+  }
+  
+  canvas {
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: auto;
+  }
+  
+  /* .call-to-action {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    cursor: pointer;
+  } */
+
+
+  audio {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: calc(100% - 20px);
+    max-width: 300px;
+    box-shadow: 5px 5px 20px #ff8928;
+    border-radius: 90px;
+    transform: scale(1.05);
+  }
+
+  #thefile {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+  }
+
+
+  #audioplayer{
+    /* position: fixed; */
+    width: 380px;
+    height: 60px;
+    margin: auto; 
+    border: 2px solid #000053;
+  }
+  
+  #pButton{
+      height:60px; 
+      width: 60px;
+      border: none;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      float:left;
+      outline:none;
+  }
+  
+  .play{background: url('http://www.alexkatz.me/codepen/img/play.png') ;}
+  .pause{background: url('http://www.alexkatz.me/codepen/img/pause.png') ;}
+  
+  #timeline{
+    width: 300px;
+    height: 20px;
+    margin-top: 20px;
+    float: left;
+    border-radius: 15px;
+    /* background: rgba(0,0,0,.2); */
+    background: white;
+    
+  }
+  #playhead{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-top: 1px;
+    background: #000053;
+  
+  }
+  
