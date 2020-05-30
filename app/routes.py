@@ -41,6 +41,6 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
-@app.route('/player', methods=['GET', 'POST'])
+@app.route('/player_svitlana', methods=['GET', 'POST'])
 def player():
-    return render_template('player.html')
+    return render_template('player_svitlana.html')
