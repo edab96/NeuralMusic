@@ -5,6 +5,13 @@ from csv import writer
 from datetime import datetime
 
 
+#Model API dependencies
+from flask import json, jsonify
+from flask import request
+from datetime import datetime
+
+
+
 def append_list_as_row(file_name, list_of_elem):
     # Open file in append mode
     with open(file_name, 'a+', newline='') as write_obj:
@@ -63,3 +70,18 @@ def result():
 @app.route('/player_svitlana', methods=['GET', 'POST'])
 def player():
     return render_template('player_svitlana.html')
+    
+    
+# API Endpoint for MIDI generation
+@app.route("/generate", methods=["GET"])
+def generate():
+    #nameOfTheCharacter = flask.request.args.get('name')
+    now = datetime.now()
+    artist = request.args.get('artist', default = '*', type = str)
+    #midi = 
+    return jsonify(
+                    {
+                        "artist": artist,
+                        "midi": "ai/output/" + artist + " " + now.strftime("%d-%m-%Y %H%M%S") + ".mid"
+                    }
+                )
