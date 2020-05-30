@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Your song is ready! - NeuralMusic</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+  {% for message in messages %}
+      <li>{{ message }}</li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+{% endwith %}
+
+<audio controls>
+  <source src="{{ url_for('static', filename='audio/static_mp3.mp3') }}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+{% endblock %}
+
+
