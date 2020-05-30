@@ -115,8 +115,20 @@ $(document).ready(function(){
 	});*/
 
 	onScrollHighlighted();
+	
+	
+	  $('#test').bind('click', function() {
+		  console.log("About to make the request..");
+            $.getJSON('/generate', { artist: "LinkinPark" },
+                function(data) {
+				console.log(data);
+              //do nothing
+            });
+            return false;
+          });
 
 })
+
 
 $(window).resize( function(){
 	var w_width = $( window ).width();

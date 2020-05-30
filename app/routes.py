@@ -78,10 +78,11 @@ def generate():
     #nameOfTheCharacter = flask.request.args.get('name')
     now = datetime.now()
     artist = request.args.get('artist', default = '*', type = str)
-    #midi = 
+    midi = "LinkinPark 30-05-2020 122552.mid"
+    #midi =  artist + " " + now.strftime("%d-%m-%Y %H%M%S") + ".mid"
     return jsonify(
                     {
                         "artist": artist,
-                        "midi": "ai/output/" + artist + " " + now.strftime("%d-%m-%Y %H%M%S") + ".mid"
+                        "midi": midi
                     }
                 )
