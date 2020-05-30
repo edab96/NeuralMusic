@@ -39,3 +39,8 @@ def login():
         file1.close()
         return redirect('/index')
     return render_template('login.html', title='Sign In', form=form)
+
+
+@app.route('/player', methods=['GET', 'POST'])
+def player():
+    return render_template('player.html')
