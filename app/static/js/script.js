@@ -125,7 +125,19 @@ $(document).ready(function(){
               //do nothing
             });
             return false;
-          });
+		  });
+		  
+		$('#generate').bind('click', function() {
+			console.log("Generate button clicked");
+			var selectedArtist = $("input[name=artist]:checked").val();
+			console.log("Selected artist: " + selectedArtist);
+			  $.getJSON('/generate', { artist: selectedArtist },
+				  function(data) {
+				  console.log(data);
+				//do nothing
+			  });
+			  return false;
+			});
 
 })
 

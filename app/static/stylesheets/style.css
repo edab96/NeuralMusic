@@ -142,7 +142,12 @@ ul.leftnav-listing li a{padding:7px;display:inline-block;font-size:16px;color:bl
 ul.leftnav-listing li.is_visiable_section a{background:red}
 ul.leftnav-listing li:not(:last-child):after{content:'';height:100%;position:absolute;background: black; left:50%;z-index:0;bottom:-100%;width:2px;margin-left:-1px;}
 
-/*Demo Extra css*/
+@media (max-width: 576px) {
+  .leftnav {
+    display: none;
+  };
+}
+
 footer {height: 150px;display: flex;justify-content: center;align-items: center;}
 .vh span {font-family: 'Roboto', sans-serif;letter-spacing: 0.02em; -webkit-text-stroke-color: #fff;
   -webkit-text-stroke-width: 0.02em;
