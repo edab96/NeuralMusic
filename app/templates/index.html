@@ -1,40 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="jumbotron">
+<div class="leftnav">
+    <ul class="leftnav-listing">
+        <li><a href="#header"></a></li>
+        <li><a href="#about"></a></li>
+        <li><a href="#team"></a></li>
+    </ul>
+</div>
+    <div class="container header-section" id="header">
             <div class="row align-items-center">
-
-                <div class="col-lg-5">
+                <div class="col-lg-8">
+                    <img class="img-fluid" src="{{ url_for('static', filename='assets/img/image-placeholder.png') }}" alt="">
+                </div>
+                <div class="col-lg-4">
                     <p class="lead">Hello there!</p>
                     <!-- <hr class="my-4"> -->
                     <p id="lead-small">It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                    <a class="btn btn-primary btn-lg" href="/model" role="button">Get started...</a>
+                    <a class="btn btn-primary btn-lg" href="/model" role="button">Get started</a>
                 </div>
-                <div class="col-lg-7">
-                    <img class="img-fluid" src="{{ url_for('static', filename='assets/img/piano_4x.png') }}" alt="">
-                </div>
+                
             </div>
-
-
-
-        <section class="">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading"></h2>
-                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatibus, voluptates harum sed molestias voluptatem explicabo quaerat non sit nihil vero eum. Pariatur expedita accusamus tempore facere non animi nemo.</p>
-                    </div>
-                    <div class="col-lg-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem magni ipsum suscipit nesciunt ullam, molestias fugiat sapiente odio fugit voluptatibus velit quis ratione quasi blanditiis consequuntur repellat esse iure omnis?</div>
-                </div>
-            </div>
-        </section>
-
     </div>
+    <!-- Select artist -->
+    <section class="page-section text-center" id="artist-selection">
+        <h2 class="section-heading">Select artist</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        <input type="radio" id="artist1" name="artist" value="artist1"><label for="male">One</label><br>
+        <input type="radio" id="artist2" name="artist" value="artist2"><label for="female">Two</label><br>
+        <input type="radio" id="artist3" name="artist" value="artist3"><label for="other">Three</label><br>
+        <!-- var input = $("input[name=artist]:checked").val() -->
+        <a class="btn btn-primary btn-lg" href="" role="button" id="generate">Generate</a>
+    </section>
     <!-- About-->
-    <section class="page-section" id="about">
+    <section class="page-section text-center" id="about">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading">How to use</h2>
