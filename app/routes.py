@@ -1,8 +1,15 @@
-from flask import render_template, redirect, send_from_directory, flash, json, jsonify, request
+from flask import render_template, redirect, send_from_directory, flash
 from app import app
 from app.forms import TrainingSelection
 from csv import writer
 from datetime import datetime
+
+
+#Model API dependencies
+from flask import json, jsonify
+from flask import request
+from datetime import datetime
+
 
 
 def append_list_as_row(file_name, list_of_elem):
