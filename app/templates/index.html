@@ -3,15 +3,17 @@
 {% block content %}
 <div class="leftnav">
     <ul class="leftnav-listing">
-        <li><a href="#header"></a></li>
-        <li><a href="#about"></a></li>
+        <li><a href="#home-header"></a></li>
+        <li><a href="#artist-selection"></a></li>
+        <li><a href="#load-animation"></a></li>
+        <li><a href="#artist-selection"></a></li>
         <li><a href="#team"></a></li>
     </ul>
 </div>
-    <div class="container header-section" id="header">
+    <section class="container header-section" id="home-header">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <img class="img-fluid" src="{{ url_for('static', filename='assets/img/image-placeholder.png') }}" alt="">
+                    <img class="img-fluid" id="header-img" src="{{ url_for('static', filename='assets/img/image-placeholder.png') }}" alt="">
                 </div>
                 <div class="col-lg-4">
                     <p class="lead">Hello there!</p>
@@ -21,7 +23,7 @@
                 </div>
                 
             </div>
-    </div>
+        </section>
     <!-- Select artist -->
     <section class="page-section text-center" id="artist-selection">
         <h2 class="section-heading">Select artist</h2>
@@ -29,52 +31,62 @@
         <input type="radio" id="artist1" name="artist" value="artist1"><label for="male">One</label><br>
         <input type="radio" id="artist2" name="artist" value="artist2"><label for="female">Two</label><br>
         <input type="radio" id="artist3" name="artist" value="artist3"><label for="other">Three</label><br>
-        <!-- var input = $("input[name=artist]:checked").val() -->
         <a class="btn btn-primary btn-lg" href="" role="button" id="generate">Generate</a>
     </section>
-    <!-- About-->
-    <section class="page-section text-center" id="about">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading">How to use</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    <!-- Loading animation -->
+    <section class="page-section text-center" id="load-animation">
+        <h2 class="section-heading">Please wait</h2>
+        <img class="img-fluid" id="gif-animation" src="{{ url_for('static', filename='assets/img/loading-png-gif.gif') }}" alt="">
+    </section>
+
+    <!-- Player -->
+    <section class="page-section text-center" id="player-section">
+        <h2 class="section-heading">Player</h2>
+        <div id="app-cover">
+            <div id="bg-artwork"></div>
+            <div id="bg-layer"></div>
+            <div id="player">
+                <div id="player-track">
+                    <div id="album-name"></div>
+                    <div id="track-name"></div>
+                    <div id="track-time">
+                        <div id="current-time"></div>
+                        <div id="track-length"></div>
+                    </div>
+                    <div id="s-area">
+                        <div id="ins-time"></div>
+                        <div id="s-hover"></div>
+                        <div id="seek-bar"></div>
+                    </div>
                 </div>
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ url_for('static', filename='assets/img/about/1.png') }}" alt="" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4 class="subheading">Select the genre/category/whatever</h4>
+                <div id="player-content">
+                    <div id="album-art">
+                        <img src="{{ url_for('static', filename='assets/img/player/beethoven.jpg') }}" class="active" id="_1">
+                        <div id="buffer-box">Buffering ...</div>
+                    </div>
+                    <div id="player-controls">
+                        <div class="control">
+                            <!-- <div class="button" id="play-previous">
+                                <i class="fas fa-backward"></i>
+                            </div> -->
+                        </div>
+                        <div class="control">
+                            <div class="player-button" id="play-pause-button">
+                                <i class="fas fa-play"></i>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente.</p></div>
                         </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ url_for('static', filename='assets/img/about/2.png') }}" alt="" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4 class="subheading">Is there an action in the middle?</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente.</p></div>
+                        <div class="control">
+                            <!-- <div class="button" id="test-button" style="color: black;">
+                                <i class="fas fa-play"></i>
+                            </div> -->
                         </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ url_for('static', filename='assets/img/about/3.png') }}" alt="" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4 class="subheading">Press the button!</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>Enjoy<br />some music<br />in midi format!</h4>
-                        </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    
     <!-- Team-->
     <section class="page-section" id="team">
             <div class="container">
@@ -114,4 +126,10 @@
                 </div>
             </div>
         </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src='{{ url_for('static', filename='js/lib/WebAudioFontPlayer.js') }}'></script>
+<script src='{{ url_for('static', filename='js/lib/MIDIFile.js') }}'></script>
+<script src='{{ url_for('static', filename='js/lib/MIDIPlayer.js') }}'></script>
+<script src='{{ url_for('static', filename='js/player.js') }}'></script>
 {% endblock %}

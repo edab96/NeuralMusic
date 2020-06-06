@@ -106,13 +106,13 @@ $(document).ready(function(){
 	});
 	
 	/*First Level*/
-	/*$('ul.top_nav li span.down-arrow').click(function(e) {   
-	   $(this).parent().siblings().removeClass('submenu-active');
-	   $(this).parent().toggleClass('submenu-active');
-	   $('.sub-nav').not($(this).siblings() && $(this).parents('.sub-nav')).slideUp();
-	   $(this).siblings('.sub-nav').slideToggle();
-	   e.stopPropagation();
-	});*/
+	// $('ul.top_nav li span.down-arrow').click(function(e) {   
+	//    $(this).parent().siblings().removeClass('submenu-active');
+	//    $(this).parent().toggleClass('submenu-active');
+	//    $('.sub-nav').not($(this).siblings() && $(this).parents('.sub-nav')).slideUp();
+	//    $(this).siblings('.sub-nav').slideToggle();
+	//    e.stopPropagation();
+	// });
 
 	onScrollHighlighted();
 	
