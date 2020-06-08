@@ -21,10 +21,24 @@
 
 </head>
 <body>
+    <section class="header-section" id="home-header">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <img class="img-fluid" id="header-img" src="{{ url_for('static', filename='assets/img/piano.png') }}" alt="">
+            </div>
+            <div class="col-lg-5">
+                <p class="lead">Neural<br> Music</p>
+                <!-- <hr class="my-4"> -->
+                <p id="lead-small">A web application that generates piano music on the fly. It is powered by a neural network, trained on famous human artists, that is capable of composing piano music.</p>
+                <a class="btn btn-primary btn-lg" href="/model" role="button">Get started</a>
+            </div>
+            
+        </div>
+    </section>
             <header id="site-header" class="header">
                 <div class="container">
                     <nav>
-                        <div class="logo" tabindex="1"><a href="index">NeuralMusic</a></div>
+                        <div class="logo" tabindex="1"><a href="index"></a></div>
                         <div class="nav-wrap">
                             <div class="nav-button">
                                 <a id="nav-toggle" href="#!" class="">
