@@ -1,32 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<!-- Leftside navigation -->
 <div class="leftnav">
     <ul class="leftnav-listing">
         <li><a href="#home-header"></a></li>
-        <li><a href="#artist-selection"></a></li>
-        <li><a href="#load-animation"></a></li>
-        <li><a href="#player-section"></a></li>
+        <li><a href="#project-description"></a></li>
+        <li><a href="#model-section"></a></li>
         <li><a href="#team"></a></li>
     </ul>
 </div>
-    <!-- <section class="container header-section" id="home-header">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img class="img-fluid" id="header-img" src="{{ url_for('static', filename='assets/img/piano.png') }}" alt="">
-                </div>
-                <div class="col-lg-6">
-                    <p class="lead">Neural Music</p>
-                    <!-- <hr class="my-4"> -->
-                    <!-- <p id="lead-small">A web application that generates piano music on the fly. It is powered by a neural network, trained on famous human artists, that is capable of composing piano music.</p>
-                    <a class="btn btn-primary btn-lg" href="/model" role="button">Get started</a>
-                </div>
-                
-            </div>
-        </section> --> 
 
-    <section class="page-section container" id="project-description">
-        <h2 class="section-heading text-center">Let's put some text here</h2>
+<!-- Project description section -->
+<section class="page-section container" id="project-description">
+        <h1 class="section-heading text-center">Let's put some text here</h1>
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
@@ -34,92 +22,120 @@
             </div>
             <div class="col-lg-2"></div>
         </div>
-    </section>
-    <!-- Select artist -->
-    <section class="page-section text-center" id="artist-selection">
-        <h2 class="section-heading">Select artist</h2>
-        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        <input type="radio" id="artist1" name="artist" value="artist1"><label for="male">One</label><br>
-        <input type="radio" id="artist2" name="artist" value="artist2"><label for="female">Two</label><br>
-        <input type="radio" id="artist3" name="artist" value="artist3"><label for="other">Three</label><br>
-        <a class="btn btn-primary btn-lg" href="" role="button" id="generate">Generate</a>
-    </section>
+</section>
 
-    <div class="container artists text-center">        
-        <h2 class="section-heading">Select the style</h2>
-        <div class="group justify-content-center">
-          <input type="radio" name="rb" id="rb1" />
-          <label for="rb1">Ludovico Einaudi</label>
-          <input type="radio" name="rb" id="rb2" />
-          <label for="rb2">Linking Park</label>
-          <input type="radio" name="rb" id="rb3" />
-          <label for="rb3">Electroswing</label>
-          <input type="radio" name="rb" id="rb4" />
-          <label for="rb4">Elton John</label>
-        </div>      
-        <a class="btn btn-primary btn-lg" href="" role="button" id="generate">Generate</a>
-    </div>
-      
-    <!-- Loading animation -->
-    <section class="page-section text-center" id="load-animation">
-        <h2 class="section-heading">Please wait</h2>
-        <img class="img-fluid" id="gif-animation" src="{{ url_for('static', filename='assets/img/loading-png-gif.gif') }}" alt="">
-    </section>
+<!-- Model section -->
+<section class="page-section text-center" id="model-section">
 
-    <!-- Player -->
-    <section class="page-section text-center" id="player-section">
-        <h2 class="section-heading">Player</h2>
-        <div id="app-cover">
-            <div id="bg-artwork"></div>
-            <div id="bg-layer"></div>
-            <div id="player">
-                <div id="player-track">
-                    <div id="album-name"></div>
-                    <div id="track-name"></div>
-                    <div id="track-time">
-                        <div id="current-time"></div>
-                        <div id="track-length"></div>
+        <!-- Select artist  -->
+        <!-- <div class="container artists text-center">        
+            <h2 class="section-heading">Select the style</h2>
+            <div class="group justify-content-center">
+            <input type="radio" name="rb" id="rb1" />
+            <label for="rb1">Ludovico Einaudi</label>
+            <input type="radio" name="rb" id="rb2" />
+            <label for="rb2">Linking Park</label>
+            <input type="radio" name="rb" id="rb3" />
+            <label for="rb3">Electroswing</label>
+            <input type="radio" name="rb" id="rb4" />
+            <label for="rb4">Elton John</label>
+            </div>      
+            <a class="btn btn-primary btn-lg" href="" role="button" id="generate">Generate</a>
+        </div> -->
+
+
+        <!-- Test -->
+        <div class="container test">        
+            <h1 class="">Select style</h1>
+            <div class="row group justify-content-center">
+                <!-- <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, sint nisi ad perferendis nesciunt necessitatibus quaerat. Eos voluptas ab accusantium sequi corporis pariatur, iusto fugit natus minus suscipit magnam aperiam?</p>
+                </div> -->
+                <div class="col-6">
+                    <div class="row group justify-content-center">
+                        <input type="radio" name="rb" id="rb7" />
+                        <label for="rb7">Ludovico Einaudi</label>
                     </div>
-                    <div id="s-area">
-                        <div id="ins-time"></div>
-                        <div id="s-hover"></div>
-                        <div id="seek-bar"></div>
+                    <div class="row group justify-content-center">
+                        <input type="radio" name="rb" id="rb8" />
+                        <label for="rb8">Linking Park</label>
+                    </div>
+                    <div class="row group justify-content-center">
+                        <input type="radio" name="rb" id="rb10" />
+                        <label for="rb10">Electroswing</label>
+                    </div>
+                    <div class="row group justify-content-center">
+                        <input type="radio" name="rb" id="rb11" />
+                        <label for="rb11">Elton John</label>
                     </div>
                 </div>
-                <div id="player-content">
-                    <div id="album-art">
-                        <img src="{{ url_for('static', filename='assets/img/player/beethoven.jpg') }}" class="active" id="_1">
-                        <div id="buffer-box">Buffering ...</div>
+            </div>
+            <a class="btn btn-primary btn-lg" href="" role="button" id="generate">Generate</a>
+        </div>
+      
+        <!-- Loading animation -->
+        <div class="text-center" id="load-animation">
+            <h1 class="section-heading">Please wait</h1>
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        </div>
+        
+
+        <!-- Player -->
+        <div class="text-center" id="player-section">
+            <h1 class="section-heading">Player</h1>
+            <div id="app-cover">
+                <div id="bg-artwork"></div>
+                <div id="bg-layer"></div>
+                <div id="player">
+                    <div id="player-track">
+                        <div id="album-name"></div>
+                        <div id="track-name"></div>
+                        <div id="track-time">
+                            <div id="current-time"></div>
+                            <div id="track-length"></div>
+                        </div>
+                        <div id="s-area">
+                            <div id="ins-time"></div>
+                            <div id="s-hover"></div>
+                            <div id="seek-bar"></div>
+                        </div>
                     </div>
-                    <div id="player-controls">
-                        <div class="control">
-                            <!-- <div class="button" id="play-previous">
-                                <i class="fas fa-backward"></i>
-                            </div> -->
+                    <div id="player-content">
+                        <div id="album-art">
+                            <img src="{{ url_for('static', filename='assets/img/player/beethoven.jpg') }}" class="active" id="_1">
+                            <div id="buffer-box">Buffering ...</div>
                         </div>
-                        <div class="control">
-                            <div class="player-button" id="play-pause-button">
-                                <i class="fas fa-play"></i>
+                        <div id="player-controls">
+                            <div class="control">
+                                <!-- <div class="button" id="play-previous">
+                                    <i class="fas fa-backward"></i>
+                                </div> -->
                             </div>
-                        </div>
-                        <div class="control">
-                            <!-- <div class="button" id="test-button" style="color: black;">
-                                <i class="fas fa-play"></i>
-                            </div> -->
+                            <div class="control">
+                                <div class="player-button" id="play-pause-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <!-- <div class="button" id="test-button" style="color: black;">
+                                    <i class="fas fa-play"></i>
+                                </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+</section>
+<!-- End of the model section -->
 
     
-    <!-- Team-->
-    <section class="page-section" id="team">
+<!-- Team Section-->
+<section class="page-section" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading">Project Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h1 class="section-heading">Project Team</h1>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
@@ -127,7 +143,7 @@
                             <img class="mx-auto rounded-circle" src="{{ url_for('static', filename='assets/img/team/Edoardo.jpg') }}" alt="" />
                             <h4>Edoardo</h4>
                             <p class="text-muted">AI, Team Lead</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -135,7 +151,7 @@
                             <img class="mx-auto rounded-circle" src="{{ url_for('static', filename='assets/img/team/Daniel.jpg') }}" alt="" />
                             <h4>Daniel</h4>
                             <p class="text-muted">Web Developer (Back-End)</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -143,17 +159,18 @@
                             <img class="mx-auto rounded-circle" src="{{ url_for('static', filename='assets/img/team/Svitlana.png') }}" alt="" />
                             <h4>Svitlana Leus</h4>
                             <p class="text-muted">Web Developer (Front-End)</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a> -->
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                    <!-- <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div> -->
                 </div>
             </div>
-        </section>
+</section>
 
+<!-- Player scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src='{{ url_for('static', filename='js/lib/WebAudioFontPlayer.js') }}'></script>
 <script src='{{ url_for('static', filename='js/lib/MIDIFile.js') }}'></script>

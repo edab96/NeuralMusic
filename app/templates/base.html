@@ -16,11 +16,10 @@
     {% else %}
     <title>NeuralMusic</title>
     {% endif %}
-
-
-
 </head>
+
 <body>
+    <!-- Header section -->
     <section class="header-section" id="home-header">
         <div class="row align-items-center">
             <div class="col-lg-7">
@@ -32,54 +31,53 @@
                 <p id="lead-small">A web application that generates piano music on the fly. It is powered by a neural network, trained on famous human artists, that is capable of composing piano music.</p>
                 <a class="btn btn-primary btn-lg" href="/model" role="button">Get started</a>
             </div>
-            
         </div>
     </section>
-            <header id="site-header" class="header">
-                <div class="container">
-                    <nav>
-                        <div class="logo" tabindex="1"><a href="index"></a></div>
-                        <div class="nav-wrap">
-                            <div class="nav-button">
-                                <a id="nav-toggle" href="#!" class="">
-                                    <span class="before"></span>
-                                </a>
-                            </div>
-                            <ul class="top_nav">
-                                <li>
-                                    <a href="index">Home</a>
-                                    <ul class="sub-nav">
-                                        <li><a href="index#about">About project</a></li>
-                                        <li><a href="index#team">Our team</a></li>      
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/edab96/NeuralMusic" target="_blank">Git <i class="fas fa-code"></i></a>
-                                </li>
-                                <li>
-                                    <a href="model">Medium</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </header>
-        <!-- Content Goes Here -->
-        {% block content %}{% endblock %}
+    <!-- End of the header section -->
 
-        <!-- Footer-->
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright © Neural Music 2020</div>
-                    <div class="col-lg-4 my-3 my-lg-0">
+    <!-- Header/Menu -->
+    <header id="site-header" class="header">
+        <div class="container">
+            <nav>
+                <div class="logo" tabindex="1"><a href="index"></a></div>
+                <div class="nav-wrap">
+                    <div class="nav-button">
+                        <a id="nav-toggle" href="#!" class="">
+                            <span class="before"></span>
+                        </a>
                     </div>
+                    <ul class="top_nav">
+                        <li>
+                            <a href="index">Home</a>
+                            <ul class="sub-nav">
+                                <li><a href="index#project-description">About project</a></li>
+                                <li><a href="index#model">Model</a></li>
+                                <li><a href="index#team">Team</a></li>      
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://github.com/edab96/NeuralMusic" target="_blank">Git <i class="fas fa-code"></i></a>
+                        </li>
+                        <li>
+                            <a href="model">Medium</a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </footer>
-<!-- </div> -->
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Content Goes Here -->
+    {% block content %}{% endblock %}
+
+
+    <!-- Footer-->
+    <footer class="site-footer">
+        <p class="text-center">Copyright © Neural Music 2020</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>

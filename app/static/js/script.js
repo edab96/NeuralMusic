@@ -18,7 +18,7 @@ window.onscroll = function() {
 	}else{
 		$('.leftnav-listing').removeClass('leftnav-fixed')
 	}
-	stickyFunction();
+	// stickyFunction();
 	onScrollHighlighted();
 };
 
