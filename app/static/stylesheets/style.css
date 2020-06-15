@@ -34,6 +34,10 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   padding-bottom: 40px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.3rem;
+  font-weight: 700;
 }
 
 ul {
@@ -256,7 +260,7 @@ footer {height: 150px;display: flex;justify-content: center;align-items: center;
      /* background: #fef6eb; */
  }
  .page-section {
-    padding: 6rem 0;
+    padding: 3rem 0;
   }
   .page-section h2.section-heading {
     font-size: 2.5rem;
@@ -373,6 +377,7 @@ footer {height: 150px;display: flex;justify-content: center;align-items: center;
 
 #player
 {
+    margin-top: 100px;
     position: relative;
     height: 100%;
     z-index: 3;
@@ -393,12 +398,12 @@ footer {height: 150px;display: flex;justify-content: center;align-items: center;
 
 #player-track.active
 {
-    top: -92px;
+    top: -100px;
 }
 
 #album-name
 {
-    color: #54576f;
+    color: #27296D;
     font-size: 17px;
     font-weight: bold;
 }
@@ -438,7 +443,7 @@ footer {height: 150px;display: flex;justify-content: center;align-items: center;
 
 #track-time.active #current-time, #track-time.active #track-length
 {
-    color: #f86d92;
+    color: #4CDDD6;
     background-color: transparent;
 }
 
@@ -490,7 +495,7 @@ footer {height: 150px;display: flex;justify-content: center;align-items: center;
     bottom: 0;
     left: 0;
     width: 0;
-    background-color: #fd6d94;
+    background-color: #27296D;
     transition: 0.2s ease width;
     z-index: 1;
 }
@@ -651,6 +656,7 @@ footer {height: 150px;display: flex;justify-content: center;align-items: center;
 .player-button, .player-button i
 {
     transition: 0.2s ease all;
+    box-sizing: content-box;
 }
 
 .player-button:hover
@@ -693,6 +699,7 @@ input[type="radio"] {
   padding-right: 1em;
   line-height: 2;
   cursor: pointer;
+  font-weight: 700;
   /* color: #F9CDE6; */
 }
   .group label::before {
