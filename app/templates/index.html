@@ -6,7 +6,7 @@
 <div class="leftnav">
     <ul class="leftnav-listing">
         <li><a href="#home-header"></a></li>
-        <li><a href="#project-description"></a></li>
+        <!--<li><a href="#project-description"></a></li>-->
         <li><a href="#model-section"></a></li>
         <li><a href="#team"></a></li>
     </ul>
@@ -14,11 +14,19 @@
 
 <!-- Project description section -->
 <section class="page-section container" id="project-description">
-        <h1 class="section-heading text-center">Let's put some text here</h1>
+        <h1 class="section-heading text-center">Wait... what and how?</h1>
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta tenetur maiores sed in? Nobis esse error corrupti, cupiditate debitis hic vero dolorem. Nobis saepe autem a modi beatae reiciendis voluptas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque deserunt et deleniti ipsam blanditiis enim porro itaque. A aut tempore repellat facere in eligendi. Dicta error eos maxime adipisci culpa?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam delectus officiis odit inventore nam, alias, odio corporis neque quidem fugit tempora provident repellendus laborum sapiente expedita quia eius obcaecati eaque.</p>
+                <p>NeuralMusic is a web application that generates MIDI piano melodies.<br>
+
+It is powered by a neural network, trained for tens of hours on music famous human artists.<br>
+<br>
+Be aware of the following <b>limitations</b>: <br>The application only support monophonic MIDI generation.<br>
+The generated sequences are not visualized in the browser, but they can be played directly on the webpage.<br>
+There is no cherrypicking here, so...<br>... Some generated sequences are <i>“more interesting”</i> than others. 
+
+</p>
             </div>
             <div class="col-lg-2"></div>
         </div>
@@ -27,104 +35,53 @@
 <!-- Model section -->
 <section class="page-section text-center" id="model-section">
 
-        <!-- Select artist  -->
-        <!-- <div class="container artists text-center">        
-            <h2 class="section-heading">Select the style</h2>
-            <div class="group justify-content-center">
-            <input type="radio" name="rb" id="rb1" />
-            <label for="rb1">Ludovico Einaudi</label>
-            <input type="radio" name="rb" id="rb2" />
-            <label for="rb2">Linking Park</label>
-            <input type="radio" name="rb" id="rb3" />
-            <label for="rb3">Electroswing</label>
-            <input type="radio" name="rb" id="rb4" />
-            <label for="rb4">Elton John</label>
-            </div>      
-            <a class="btn btn-primary btn-lg" href="" role="button" id="generate">Generate</a>
-        </div> -->
-
-
         <!-- Test -->
         <div class="container test">        
-            <h1 class="">Select style</h1>
+            <h1 class="" style="color:#f9cde6;">Select a style</h1>
             <div class="row group justify-content-center">
                 <!-- <div class="col-6">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, sint nisi ad perferendis nesciunt necessitatibus quaerat. Eos voluptas ab accusantium sequi corporis pariatur, iusto fugit natus minus suscipit magnam aperiam?</p>
                 </div> -->
                 <div class="col-6">
                     <div class="row group justify-content-center">
-                        <input type="radio" name="rb" id="rb7" />
+                        <input type="radio" name="rb" id="rb7" value="LudovicoEinaudi" checked/>
                         <label for="rb7">Ludovico Einaudi</label>
                     </div>
                     <div class="row group justify-content-center">
-                        <input type="radio" name="rb" id="rb8" />
-                        <label for="rb8">Linking Park</label>
+                        <input type="radio" name="rb" id="rb8" value="LinkinPark"/>
+                        <label for="rb8">Linkin Park</label>
                     </div>
                     <div class="row group justify-content-center">
-                        <input type="radio" name="rb" id="rb10" />
+                        <input type="radio" name="rb" id="rb10" value="Electroswing"/>
                         <label for="rb10">Electroswing</label>
                     </div>
                     <div class="row group justify-content-center">
-                        <input type="radio" name="rb" id="rb11" />
+                        <input type="radio" name="rb" id="rb11" value="EltonJohn"/>
                         <label for="rb11">Elton John</label>
                     </div>
                 </div>
             </div>
-            <a class="btn btn-primary btn-lg" href="" role="button" id="generate">Generate</a>
+            <span class="btn btn-primary btn-lg" href="" role="button" id="generate">Generate</span>
         </div>
-      
         <!-- Loading animation -->
-        <div class="text-center" id="load-animation">
+        <div class="text-center load-animation" id="load-animation">
             <h1 class="section-heading">Please wait</h1>
+			<h3 class="section-heading-pun" style="font-size: 1rem;">If it has been more than 30 seconds, you can start worrying...</h3>
             <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         </div>
         
 
         <!-- Player -->
         <div class="text-center" id="player-section">
-            <h1 class="section-heading">Player</h1>
-            <div id="app-cover">
-                <div id="bg-artwork"></div>
-                <div id="bg-layer"></div>
-                <div id="player">
-                    <div id="player-track">
-                        <div id="album-name"></div>
-                        <div id="track-name"></div>
-                        <div id="track-time">
-                            <div id="current-time"></div>
-                            <div id="track-length"></div>
-                        </div>
-                        <div id="s-area">
-                            <div id="ins-time"></div>
-                            <div id="s-hover"></div>
-                            <div id="seek-bar"></div>
-                        </div>
-                    </div>
-                    <div id="player-content">
-                        <div id="album-art">
-                            <img src="{{ url_for('static', filename='assets/img/player/beethoven.jpg') }}" class="active" id="_1">
-                            <div id="buffer-box">Buffering ...</div>
-                        </div>
-                        <div id="player-controls">
-                            <div class="control">
-                                <!-- <div class="button" id="play-previous">
-                                    <i class="fas fa-backward"></i>
-                                </div> -->
-                            </div>
-                            <div class="control">
-                                <div class="player-button" id="play-pause-button">
-                                    <i class="fas fa-play"></i>
-                                </div>
-                            </div>
-                            <div class="control">
-                                <!-- <div class="button" id="test-button" style="color: black;">
-                                    <i class="fas fa-play"></i>
-                                </div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--<h1 class="section-heading">Your MIDI file is ready to be played!</h1>-->
+            <div class="player">
+			<h3 class="player-file-label"></h3>
+			<div class="player-controls">
+				<div class="play-button player-control"><img src="static/assets/img/play.png"></div>
+				<div class="stop-button player-control"><img src="static/assets/img/pause.png"></div>
+				<div class="download-button player-control"><img src="static/assets/img/download.png"></div>
+			</div>
+			</div>
         </div>
 </section>
 <!-- End of the model section -->
@@ -134,7 +91,7 @@
 <section class="page-section" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h1 class="section-heading">Project Team</h1>
+                    <h1 class="section-heading" style="color:#f9cde6;">Project Team</h1>
                     <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
                 <div class="row">
@@ -169,11 +126,7 @@
                 </div>
             </div>
 </section>
-
+<div style="position:relative;"><img src="static/assets/img/horizontal-art.png" style="width:100vw;position:absolute;top:-200px;"></div>
 <!-- Player scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src='{{ url_for('static', filename='js/lib/WebAudioFontPlayer.js') }}'></script>
-<script src='{{ url_for('static', filename='js/lib/MIDIFile.js') }}'></script>
-<script src='{{ url_for('static', filename='js/lib/MIDIPlayer.js') }}'></script>
-<script src='{{ url_for('static', filename='js/player.js') }}'></script>
+<script src='{{ url_for('static', filename='js/neuralMusicPlayer.js') }}'></script>
 {% endblock %}

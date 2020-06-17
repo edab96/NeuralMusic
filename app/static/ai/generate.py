@@ -2,19 +2,19 @@ import sys
 from os import path
 
 #Settings
-artist = sys.argv[1]
-weights = sys.argv[2]
+#artist = sys.argv[1]
+#weights = sys.argv[2]
 
-if (not path.exists("artists/"+artist)):
-    print("\nNo folder found for this artist\n")
-    exit()
+#if (not path.exists("artists/"+artist)):
+#    print("\nNo folder found for this artist\n")
+#    exit()
     
-if (not path.exists("artists/"+artist+"/"+weights)):
-    print("\nNo weights found for this artist.\nMake sure you specify the weights file name as a second parameter in CLI, or\nthat a weights.hdf5 file exists in the artist folder.\n")
-    exit()
+#if (not path.exists("artists/"+artist+"/"+weights)):
+#    print("\nNo weights found for this artist.\nMake sure you specify the weights file name as a second parameter in CLI, or\nthat a weights.hdf5 file exists in the artist folder.\n")
+#    exit()
     
-weights = "artists/"+artist+"/"+"weights-improvement-101-0.2185-bigger.hdf5"
-notesFolder = "artists/"+artist+"/"
+weights = ""
+notesFolder = ""
 
 
 #Dependencies
@@ -39,10 +39,13 @@ from datetime import datetime
 
 #The cool stuff
 
-def generate():
+def generate(artist):
+    weights = "app/static/ai/artists/"+artist+"/"+"weights.hdf5"
+    notes = "app/static/ai/artists/"+artist+"/notes"
+
     """ Generate a piano midi file """
     #load the notes used to train the model
-    with open(notesFolder +'notes', 'rb') as filepath:
+    with open(notes, 'rb') as filepath:
         notes = pickle.load(filepath)
 
     # Get all pitch names
@@ -51,11 +54,12 @@ def generate():
     n_vocab = len(set(notes))
     print("Instantiating model")
     network_input, normalized_input = prepare_sequences(notes, pitchnames, n_vocab)
-    model = create_network(normalized_input, n_vocab)
+    model = create_network(normalized_input, n_vocab, weights)
     print("Generating notes")
     prediction_output = generate_notes(model, network_input, pitchnames, n_vocab)
     print("Rebulding midi")
-    create_midi(prediction_output)
+    midiPath = create_midi(prediction_output, artist)
+    return midiPath
 
 def prepare_sequences(notes, pitchnames, n_vocab):
     """ Prepare the sequences used by the Neural Network """
@@ -79,7 +83,7 @@ def prepare_sequences(notes, pitchnames, n_vocab):
     normalized_input = normalized_input / float(n_vocab)    
     return (network_input, normalized_input)
 
-def create_network(network_input, n_vocab):
+def create_network(network_input, n_vocab, weights):
     """ create the structure of the neural network """
     model = Sequential()
     model.add(LSTM(
@@ -100,7 +104,14 @@ def create_network(network_input, n_vocab):
     model.add(Activation('softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 
-    # Load the weights to each node
+    if (not path.exists(weights)):
+        print("\nNo weights found for this artist.\nMake sure you specify the weights file name as a second parameter in CLI, or\nthat a weights.hdf5 file exists in the artist folder.\n")
+        
+        import os
+        cwd = os.getcwd()
+        print("current working folder",cwd)
+        exit()
+
     model.load_weights(weights)
 
     return model
@@ -131,7 +142,7 @@ def generate_notes(model, network_input, pitchnames, n_vocab):
 
     return prediction_output
 
-def create_midi(prediction_output):
+def create_midi(prediction_output, artist):
     """ convert the output from the prediction to notes and create a midi file
         from the notes """
     offset = 0
@@ -163,7 +174,10 @@ def create_midi(prediction_output):
     midi_stream = stream.Stream(output_notes)
 
     now = datetime.now()
-    midi_stream.write('midi', fp='output/'+ artist + " " + now.strftime("%d-%m-%Y %H%M%S") + '.mid')
+    midiPath = '/static/ai/output/'+ artist + " " + now.strftime("%d-%m-%Y %H%M%S") + '.mid'
+    midi_stream.write('midi', fp = 'app'+midiPath)
+    return midiPath
 
-if __name__ == '__main__':
-    generate()
+
+#if __name__ == '__main__':
+#    generate()

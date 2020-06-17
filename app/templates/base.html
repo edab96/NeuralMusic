@@ -8,8 +8,11 @@
     <script src="https://kit.fontawesome.com/48de37fd88.js" crossorigin="anonymous"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Stylesheet -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type='text/javascript' src='http://www.midijs.net/lib/midi.js'></script>
+	<!-- Stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+	
 
     {% if title %}
     <title>{{ title }} - NeuralMusic</title>
@@ -23,13 +26,13 @@
     <section class="header-section" id="home-header">
         <div class="row align-items-center">
             <div class="col-lg-7">
-                <img class="img-fluid" id="header-img" src="{{ url_for('static', filename='assets/img/piano.png') }}" alt="">
+                <img class="img-fluid" id="header-img" src="{{ url_for('static', filename='assets/img/neuralMusic.png') }}" alt="">
             </div>
             <div class="col-lg-5">
                 <p class="lead">Neural<br> Music</p>
                 <!-- <hr class="my-4"> -->
-                <p id="lead-small">A web application that generates piano music on the fly. It is powered by a neural network, trained on famous human artists, that is capable of composing piano music.</p>
-                <a class="btn btn-primary btn-lg" href="/model" role="button">Get started</a>
+                <p id="lead-small">A web application that generates MIDI piano music. It is powered by a neural network, trained on a number of MIDI files from various famous human artists.</p>
+                <a class="btn btn-primary btn-lg" href="/#model-section" role="button">Try it now</a>
             </div>
         </div>
     </section>
@@ -50,16 +53,16 @@
                         <li>
                             <a href="index">Home</a>
                             <ul class="sub-nav">
-                                <li><a href="index#project-description">About project</a></li>
-                                <li><a href="index#model">Model</a></li>
-                                <li><a href="index#team">Team</a></li>      
+                                <li><a href="/#project-description">About project</a></li>
+                                <li><a href="/#model-section">Model</a></li>
+                                <li><a href="/#team">Team</a></li>      
                             </ul>
                         </li>
                         <li>
                             <a href="https://github.com/edab96/NeuralMusic" target="_blank">Git <i class="fas fa-code"></i></a>
                         </li>
                         <li>
-                            <a href="model">Medium</a>
+                            <a href="https://medium.com/techlabsms">Medium</a>
                         </li>
                     </ul>
                 </div>
@@ -73,7 +76,7 @@
 
     <!-- Footer-->
     <footer class="site-footer">
-        <p class="text-center">Copyright © Neural Music 2020</p>
+        <p class="text-center">Neural Music is a <a href="https://www.techlabs.org/" ><img class="techlabs-logo" style="display:inline-block;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDYuMDYgMTAyLjc5Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZiMWQ1Yzt9LmNscy0ye2ZpbGw6IzQ1NDU0NTt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPnRsLWxvZ288L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHBhdGggaWQ9ImFycm93IiBjbGFzcz0iY2xzLTEiIGQ9Ik0wLDkyLjgxVjc4QTUuODIsNS44MiwwLDAsMSwuODQsNzVhNi42MSw2LjYxLDAsMCwxLDIuNzQtMi4zOUwzMy43Myw1Ni45YTQwLDQwLDAsMCwxLDguNTQtM2MtMS42LS40LTMuMTEtLjg0LTQuNTItMS4zYTI2LjUxLDI2LjUxLDAsMCwxLTQtMS43MkwzLjU4LDM1LjI2QTYuNjEsNi42MSwwLDAsMSwuODQsMzIuODcsNS44Myw1LjgzLDAsMCwxLDAsMjkuOFYxNUw2NS43Nyw0OS43djguMzhaIi8+PHBhdGggaWQ9InBvaW50IiBjbGFzcz0iY2xzLTEiIGQ9Ik03NS40LDg4LjMzYTEzLjI5LDEzLjI5LDAsMCwxLC45NS01LDEyLjA5LDEyLjA5LDAsMCwxLDIuNjUtNCwxMy4yNCwxMy4yNCwwLDAsMSw0LTIuNywxMi4zOCwxMi4zOCwwLDAsMSw1LTEsMTIuMjMsMTIuMjMsMCwwLDEsNC45LDEsMTIuNDQsMTIuNDQsMCwwLDEsNCwyLjcsMTIuMjUsMTIuMjUsMCwwLDEsMi42NSw0LDEyLjQ4LDEyLjQ4LDAsMCwxLDEsNSwxMi4zMiwxMi4zMiwwLDAsMS0xLDUsMTMuMjQsMTMuMjQsMCwwLDEtMi42NSw0LDEyLjE2LDEyLjE2LDAsMCwxLTQsMi42NSwxMi41NiwxMi41NiwwLDAsMS00LjksMSwxMi44MywxMi44MywwLDAsMS01LTEsMTIuNiwxMi42LDAsMCwxLTQtMi42NSwxMS40NywxMS40NywwLDAsMS0yLjY1LTRBMTMuMiwxMy4yLDAsMCwxLDc1LjQsODguMzNaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTc4LDE3LjJIMTQ1LjQ1VjBoODQuNDRWMTcuMkgxOTcuMzV2ODMuMTVIMTc4WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0MC43NCw3MS4yNWMxLjE4LDguNzQsOC45NSwxNSwyMS41NSwxNSw2LjYsMCwxNS4yNS0yLjQ0LDE5LjM2LTYuNTlsMTEuNDMsMTFDMjg1LjQ2LDk4LjQ5LDI3MywxMDIuMjEsMjYyLDEwMi4yMWMtMjQuOTIsMC0zOS43My0xNS0zOS43My0zNy43LDAtMjEuNSwxNC45NS0zNywzOC40MS0zNywyNC4xOSwwLDM5LjI5LDE0LjYzLDM2LjUxLDQzLjczWk0yODAsNTYuNzdDMjc4Ljg2LDQ3LjU5LDI3MS41Myw0MywyNjEuMjcsNDNjLTkuNjgsMC0xNy42LDQuNTgtMjAuMjMsMTMuNzZaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzczLjcyLDkxLjMyYy04LjM2LDgtMTcuMTYsMTEuMTgtMjcuODYsMTEuMTgtMjEsMC0zOC40MS0xMi4zMy0zOC40MS0zNy40MnMxNy40NS0zNy40MSwzOC40MS0zNy40MWMxMC4yNiwwLDE4LjE4LDIuODcsMjYuMSwxMC40NkwzNjAuNjcsNDkuNzRhMjIuMjcsMjIuMjcsMCwwLDAtMTQuNTItNS41OWMtMTIsMC0yMC44MSw4LjYxLTIwLjgxLDIwLjkzLDAsMTMuNDgsOS4zOCwyMC42NSwyMC41MiwyMC42NSw1LjcyLDAsMTEuNDQtMS41OCwxNS44My01Ljg4WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQwMy43NywwVjM5LjI4YzYuNDUtOC4xNywxNC4zNy0xMC42MSwyMi41OC0xMC42MSwyMC41MiwwLDI5LjYxLDEzLjYyLDI5LjYxLDM0LjQxdjM3LjI3SDQzOC4wOFY2My4yMmMwLTEyLjktNi44OS0xOC4zNS0xNi40Mi0xOC4zNS0xMC41NiwwLTE3Ljg5LDguNzUtMTcuODksMTkuMzV2MzYuMTNIMzg1Ljg5VjBaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNDk1LjI2LDBWODIuODZINTQ4djE3LjQ5SDQ3NS45VjBaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNjE3LjIzLDI5LjY3aDE3LjE2djcwLjY4SDYxNy41M0w2MTYuNjUsOTBjLTQuMTEsOC4zMS0xNS40LDEyLjMzLTIzLjQ2LDEyLjQ3QzU3MS43OCwxMDIuNjQsNTU2LDg5Ljc0LDU1Niw2NC45NGMwLTI0LjM3LDE2LjU3LTM3LjEzLDM3LjY4LTM3LDkuNjgsMCwxOC45MSw0LjQ1LDIzLDExLjQ3Wk01NzMuODQsNjQuOTRjMCwxMy40OCw5LjUzLDIxLjUsMjEuNCwyMS41LDI4LjE1LDAsMjguMTUtNDIuODYsMC00Mi44NkM1ODMuMzcsNDMuNTgsNTczLjg0LDUxLjQ3LDU3My44NCw2NC45NFoiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik02NzEuNjIuMTRWMzkuMjhDNjc1Ljg4LDMyLDY4Ny43NSwyOCw2OTUuMzcsMjhjMjEuMTIsMCwzNi44LDEyLjYyLDM2LjgsMzcsMCwyMy4yMi0xNiwzNy0zNy4yNCwzNy04Ljc5LDAtMTcuNzQtMi44Ny0yMy4zMS0xMS4zM2wtMS4xNyw5Ljc1SDY1My43NFYuMTRabTEuMTgsNjQuOGMwLDEyLjc2LDkuNjcsMjAuNzksMjEsMjAuNzksMTEuNDQsMCwyMC41My04LjQ2LDIwLjUzLTIwLjc5LDAtMTIuNzYtOS4wOS0yMC42NC0yMC41My0yMC42NEM2ODIuNDcsNDQuMyw2NzIuOCw1Mi42MSw2NzIuOCw2NC45NFoiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik03OTIuNzIsNDguNDVjLTUuMTMtNC43My0xMS02LjMtMTcuODktNi4zLTguNSwwLTEzLjE5LDIuNTgtMTMuMTksN3M0LjI1LDcuMTcsMTMuNDksNy43NGMxMy42My44NiwzMC45MywzLjg3LDMwLjkzLDIyLjY1LDAsMTIuNDgtMTAuNDEsMjMuMjMtMzEuMDgsMjMuMjMtMTEuNDMsMC0yMi44Ny0xLjg3LTMzLjQzLTEyLjYybDguOC0xMi40N2M2Ljg5LDcsMTYuODYsOS43NSwyNC45Miw5Ljg5LDYuNzUuMTQsMTMuMDUtMi41OCwxMy4wNS03Ljc0LDAtNC44Ny00LjEtNy42LTE0LjM3LTguMTctMTMuNjMtMS0yOS45LTUuODgtMjkuOS0yMS45NCwwLTE2LjM0LDE3LjMtMjIuMDcsMzAuNDktMjIuMDcsMTEuMjksMCwxOS43OSwyLjE1LDI4LjE1LDkuMzJaIi8+PC9nPjwvZz48L3N2Zz4="/></a> 2020 project.</p>
     </footer>
 
     <!-- Scripts -->

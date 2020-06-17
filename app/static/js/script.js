@@ -127,16 +127,32 @@ $(document).ready(function(){
             return false;
 		  });
 		  
-		$('#generate').bind('click', function() {
-			console.log("Generate button clicked");
-			var selectedArtist = $("input[name=artist]:checked").val();
-			console.log("Selected artist: " + selectedArtist);
-			  $.getJSON('/generate', { artist: selectedArtist },
-				  function(data) {
-				  console.log(data);
-				//do nothing
-			  });
-			  return false;
+		 $( document ).ready(function() {
+			$('#generate').click(function() {
+				console.log("Generate button clicked");
+				$(".load-animation").show();
+				$("#player-section").hide();
+				console.log("Start animation");
+				MIDIjs.stop()
+				var selectedArtist = $('input[type="radio"]:checked').val()
+				
+				console.log("Selected artist: " + selectedArtist);
+				
+				
+				
+				$.getJSON('/generate', { artist: selectedArtist },
+					  function(data) {
+					  console.log(data);
+					  $(".load-animation").hide();
+					  $("#player-section").show();
+					  generatedMidi = data.midi;
+					//do nothing
+				  });
+				  
+				  
+				  return false;
+				  
+				});
 			});
 
 })
