@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5 {
     font-weight: 800;
 }
 
+<<<<<<< Updated upstream
 #body-content {
     /* border: 2px solid black; */
     border-radius: 30px;
@@ -15,6 +16,14 @@ h1, h2, h3, h4, h5 {
     padding-left: 0;
     background: #EEF3FA;
     margin-top: 20px;
+=======
+h1 {
+  /* padding-bottom: 40px; */
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.3rem;
+  font-weight: 700;
+>>>>>>> Stashed changes
 }
 
 .jumbotron {
@@ -62,9 +71,12 @@ h1, h2, h3, h4, h5 {
 
  /* About */
 
+<<<<<<< Updated upstream
  #about {
      background: #fef6eb;
  }
+=======
+>>>>>>> Stashed changes
  .page-section {
     padding: 6rem 0;
   }
@@ -294,7 +306,10 @@ h1, h2, h3, h4, h5 {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... } */
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 /* Player */
 *:focus
 {
@@ -637,4 +652,142 @@ body
 .player-button:hover i
 {
     color: #fff;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+/* Artist selection */
+
+#model-section {
+  background: #fff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #F9CDE6, #fff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #F9CDE6, #fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 30px 20px;
+  border-radius: 50px;
+  max-width: 800px;
+  position: sticky;
+}
+
+.module {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.group label {
+  position: relative;
+  margin-right: 1em;
+  padding-left: 2em;
+  padding-right: 1em;
+  line-height: 2;
+  cursor: pointer;
+  font-weight: 700;
+  /* color: #F9CDE6; */
+}
+  .group label::before {
+    box-sizing: border-box;
+    content: " ";
+    position: absolute;
+    top: 0.3em;
+    left: 0;
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    border: 2px solid #27296D;
+    border-radius: .25em;
+    z-index: -1;
+  }
+
+input[type="radio"] + label::before {
+  border-radius: 1em;
+}
+/* Checked */
+input[type="checkbox"]:checked + label,
+input[type="radio"]:checked + label {
+  padding-left: 1em;
+  color: #F9CDE6;
+}
+input[type="radio"]:checked + label::before {
+    top: 0;
+    width: 100%;
+    height: 2em;
+    background: #27296D;
+  }
+
+/* Transition */
+.group label,
+.group label::before {
+  -webkit-transition: 1.85s all ease;
+  -o-transition: 1.85s all ease;
+  transition: 1.85s all ease;
+}
+
+
+/* Loading */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #27296D;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+>>>>>>> Stashed changes
