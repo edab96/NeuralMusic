@@ -133,7 +133,7 @@ $(document).ready(function(){
 				$(".load-animation").show();
 				$("#player-section").hide();
 				console.log("Start animation");
-				MIDIjs.stop()
+				MIDIjs.pause()
 				var selectedArtist = $('input[type="radio"]:checked').val()
 				
 				console.log("Selected artist: " + selectedArtist);
@@ -146,6 +146,10 @@ $(document).ready(function(){
 					  $(".load-animation").hide();
 					  $("#player-section").show();
 					  generatedMidi = data.midi;
+					  MIDIjs.play(generatedMidi);
+					  MIDIjs.pause();
+					  console.log("File duration:" + MIDIjs.get_duration(generatedMidi))
+
 					//do nothing
 				  });
 				  

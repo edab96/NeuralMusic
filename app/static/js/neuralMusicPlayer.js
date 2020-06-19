@@ -1,8 +1,7 @@
 
 var resume = false;
-var generatedMidi = '/static/LinkinPark 15-06-2020 221406.mid';
+var generatedMidi = '';
 
-console.log(MIDIjs.get_duration(generatedMidi))
 
 $(".play-button").click(function(){
 	console.log("Clicked");

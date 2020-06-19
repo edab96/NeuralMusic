@@ -15,7 +15,9 @@ from .static.ai import generate as neuralMusic
 def index():
     return render_template('index.html')
 
- 
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('favicon.ico')
     
 # API Endpoint for MIDI generation
 @app.route("/generate", methods=["GET"])
